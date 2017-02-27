@@ -1,0 +1,12 @@
+ <dashboard></dashboard>
+
+<p-dataTable [value]="searchResults" [rows]="3" [paginator]="true"
+     [pageLinks]="6" [responsive]="true" 
+     scrollHeight="400px" scrollable="true"  [stacked]="stacked">
+    <p-header>Search Result</p-header>
+    <p-column field="name" header="Name"></p-column>
+    <p-column field="email" header="Email"></p-column>
+    <p-column field="body" header="Body"></p-column>
+</p-dataTable>
+
+<button (click)="exportCSV(searchResults)">Export table to Excel</button>

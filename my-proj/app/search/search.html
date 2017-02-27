@@ -1,0 +1,32 @@
+<dashboard></dashboard>
+<div style="width: 100%">
+<table border='1' style="width: 100%" >
+    
+    <tr>
+        <td><label for="ein">EIN</label></td> 
+        <td><input id="ein" type="text" class="validate" [(ngModel)]="_seachinputcomponent.ein"></td>
+    </tr>
+    <tr>
+        <td><label for="policynumber">Policy Number</label></td> 
+        <td><input id="policy_number" type="text" class="validate" [(ngModel)]="_seachinputcomponent.policynumber"></td>
+    </tr>
+    <tr>
+        <td><label for="sourcecode">Source Code</label></td> 
+        <td><input id="source_code" type="text" class="validate" [(ngModel)]="_seachinputcomponent.sourcecode"></td>
+    </tr>
+    <tr>
+        <td><label for="inqid">INQ ID</label></td> 
+        <td><input id="inq_id" type="text" class="validate" [(ngModel)]="_seachinputcomponent.inqid"></td>
+    </tr>
+    <tr>
+        <td><label for="firstname">First Name</label></td> 
+        <td><input id="first_name" type="text" class="validate" [(ngModel)]="_seachinputcomponent.firstname"></td>
+    </tr>
+    <tr>
+        <td><label for="cdbRefId">CDB Xref ID</label></td> 
+        <td><input id="cdb_xref_id" type="text" class="validate" [(ngModel)]="_seachinputcomponent.cdbRefId"></td>
+    </tr>
+</table>
+<button class="waves-effect waves-light btn" (click)="clearvalues()">Reset</button>
+<button class="waves-effect waves-light btn" (click)="searchsubmit()">Submit</button>
+</div>
