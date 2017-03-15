@@ -1,6 +1,7 @@
+
 <dashboard></dashboard>
-<div style="width: 100%">
-<table border='1' style="width: 100%" >
+<!--<div style="width: 100%">
+<table border='1'  >
     
     <tr>
         <td><label for="ein">EIN</label></td> 
@@ -29,4 +30,65 @@
 </table>
 <button class="waves-effect waves-light btn" (click)="clearvalues()">Reset</button>
 <button class="waves-effect waves-light btn" (click)="searchsubmit()">Submit</button>
-</div>
+</div>-->
+
+
+
+<form [formGroup]="seininputform" >
+  <p-growl [value]="msgs" ></p-growl>
+    
+    <p-panel header="SEIN Input for search result">
+        <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2">
+                    EIN *:
+                </div>
+                <div class="ui-grid-col-6">
+                    <input pInputText type="text" formControlName="cein" placeholder="Required"  [(ngModel)]="_seachinputcomponent.ein"/>
+                </div>
+                <div class="ui-grid-col-4">
+                    <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!seininputform.controls['cein'].valid&&seininputform.controls['cein'].dirty">
+                        <i class="fa fa-close"></i>
+                          EIN is required
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2">
+                    Policy Number *:
+                </div>
+                <div class="ui-grid-col-6">
+                    <input pInputText type="text" formControlName="cpolicynumber" placeholder="Required - Min(4)"    [(ngModel)]="_seachinputcomponent.policynumber" />
+                </div>
+                <div class="ui-grid-col-4">
+                    <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!seininputform.controls['cpolicynumber'].valid&&seininputform.controls['cpolicynumber'].dirty">
+                        <i class="fa fa-close"></i>
+                        <span *ngIf="seininputform.controls['cpolicynumber'].errors['required']">Policy Number is required</span>
+                        <span *ngIf="seininputform.controls['cpolicynumber'].errors['minlength']">Must be longer than 4 characters</span>
+                        <span *ngIf="seininputform.controls['cpolicynumber'].errors['pattern']">Must be Number</span>
+
+                    </div>
+                </div>
+            </div>
+           
+            
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2"></div>
+                <div class="ui-grid-col-6">
+                    <button pButton type="submit" class="ui-button-warning" label="Submit" (click)="searchsubmit()" [disabled]="!seininputform.valid"></button>
+                </div>
+                <div class="ui-grid-col-4"></div>
+            </div>
+
+             <div class="ui-grid-row">
+                <div class="ui-grid-col-2"></div>
+                <div class="ui-grid-col-6">
+                     <button pButton type="text" (click)="clearvalues()" label="Clear" class="ui-button-warning"></button>
+                </div>
+                <div class="ui-grid-col-4"></div>
+            </div>
+         
+        </div>   
+    </p-panel> 
+</form>
