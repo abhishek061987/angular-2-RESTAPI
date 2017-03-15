@@ -4,10 +4,11 @@ import { Component } from '@angular/core';
   moduleId:module.id,
   selector: 'my-app',
   template: `
-  <div  class="ui-grid ui-grid-responsive ui-grid-pad center-div">
-  <p-panel  [style]="{'margin-top':'20px'}">
+  <div >
+   <p-fieldset legend="SEIN APP">
    <router-outlet></router-outlet>
-   </p-panel>
+   </p-fieldset>
+   </div>
   `
   ,
 })
