@@ -8,7 +8,7 @@ import { AuthService } from './services/authservice';
 import { AppComponent }  from './app.component';
 import {AppRoutingModule,routingComponents}  from './app.routing';
 import {DataTableModule,PanelModule,
-  GrowlModule,InputTextModule,InputTextareaModule,TabViewModule,ButtonModule,CodeHighlighterModule,MessagesModule
+  GrowlModule,InputTextModule,InputTextareaModule,TabViewModule,ButtonModule,CodeHighlighterModule,MessagesModule,FieldsetModule
 
 } from 'primeng/primeng';
 import {SearchService} from './services/search.service';
@@ -25,7 +25,7 @@ import { BaseRequestOptions } from '@angular/http';
 @NgModule({
   imports:      [ BrowserModule ,FormsModule,AppRoutingModule,HttpModule,
   DataTableModule,PanelModule,
-  GrowlModule,InputTextModule,InputTextareaModule,TabViewModule,ButtonModule,CodeHighlighterModule,MessagesModule
+  GrowlModule,InputTextModule,InputTextareaModule,TabViewModule,ButtonModule,CodeHighlighterModule,MessagesModule,FieldsetModule
   
   ,ReactiveFormsModule],
   declarations: [ AppComponent,routingComponents ],
