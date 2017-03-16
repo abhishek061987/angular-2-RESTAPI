@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component,OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {InqSearchComponent} from './inqsearch.component'
 import {SearchService} from '../services/search.service';
@@ -45,7 +45,8 @@ export class SearchComponent implements OnInit { // form validations and mandato
 
         });
         // form validations and mandatory messages
-        
+ }
+
   clearvalues() {
     console.log('clearvalues search ts', this._seachinputcomponent.ein);
        this.msgs = []; // form validations and mandatory messages
